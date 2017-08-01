@@ -1,0 +1,27 @@
+<% include partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <div class = "container">
+            <h1>Welcome to Park Reviews!</h1>
+            <p>View great parks from the PNW!</p>
+            <p>
+                <a href="parks/new" class="btn btn-primary btn-lg">Add a new park!</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    <%parks.forEach(function(park){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%=park.image%>">
+                <div class="caption">
+                    <h4><%=park.name%></h4>
+                    <a href="parks/<%=park.id%>" class="btn btn-primary btn-md">More Info</a>
+                </div>
+            </div>
+        </div>
+    <%})%>
+    </div>
+</div>
+<% include partials/footer %>
